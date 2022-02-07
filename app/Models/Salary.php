@@ -5,11 +5,11 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Vacancy extends Model
+class Salary extends Model
 {
     use CrudTrait;
 
-    protected $table = 'vacancies';
+    protected $table = 'salaries';
     // protected $primaryKey = 'id';
     public $timestamps = false;
     protected $guarded = ['id'];
@@ -17,8 +17,8 @@ class Vacancy extends Model
     // protected $hidden = [];
     // protected $dates = [];
 
-    public function salary()
+    public function vacancy()
     {
-        return $this->belongsTo(Salary::class);
+        return $this->hasMany(Vacancy ::class);
     }
 }

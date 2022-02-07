@@ -9,6 +9,7 @@ class CreateVacanciesTable extends Migration
     {
         Schema::create('vacancies', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('salary_id');
             $table->string('Description');
             $table->string('Location');
             $table->boolean('Remote');
