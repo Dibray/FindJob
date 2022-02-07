@@ -29,8 +29,8 @@ class CityCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('id');
-        CRUD::column('country_id');
         CRUD::column('name');
+        CRUD::column('country_id');
     }
 
     protected function setupCreateOperation()
@@ -38,8 +38,8 @@ class CityCrudController extends CrudController
         CRUD::setValidation(CityRequest::class);
 
         CRUD::field('id');
-        CRUD::field('country_id');
         CRUD::field('name');
+        CRUD::field('country_id');
     }
 
     protected function setupUpdateOperation()

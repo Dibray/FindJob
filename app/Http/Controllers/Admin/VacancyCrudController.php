@@ -31,9 +31,9 @@ class VacancyCrudController extends CrudController
         CRUD::column('id');
         CRUD::column('salary_id');
         CRUD::column('position_id');
+        CRUD::column('city_id');
         CRUD::column('company_id');
         CRUD::column('Description');
-        CRUD::column('Location');
         CRUD::column('Remote');
         CRUD::column('Requirements');
         CRUD::column('Schedule');
@@ -47,8 +47,8 @@ class VacancyCrudController extends CrudController
         CRUD::field('salary_id');
         CRUD::field('position_id');
         CRUD::field('company_id');
+        CRUD::field('city_id');
         CRUD::field('Description');
-        CRUD::field('Location');
         CRUD::field('Remote');
         CRUD::field('Requirements');
         CRUD::field('Schedule');
