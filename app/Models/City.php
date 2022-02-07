@@ -4,14 +4,12 @@ namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
-use phpDocumentor\Reflection\DocBlock\Tags\Return_;
-use phpDocumentor\Reflection\Utils;
 
-class Country extends Model
+class City extends Model
 {
     use CrudTrait;
 
-    protected $table = 'countries';
+    protected $table = 'cities';
     // protected $primaryKey = 'id';
     public $timestamps = false;
     protected $guarded = ['id'];
@@ -19,8 +17,8 @@ class Country extends Model
     // protected $hidden = [];
     // protected $dates = [];
 
-    public function city()
+    public function country()
     {
-        return $this->hasMany(City::class);
+        return $this->belongsTo(Country::class);
     }
 }
