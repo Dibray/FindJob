@@ -1,0 +1,14 @@
+.menu .home,
+.menu .account {
+    position: relative;
+    right: 0;
+}
+
+div.site {
+  color: red;
+}
+
+body{
+    background: cyan;
+    color:red;
+}
