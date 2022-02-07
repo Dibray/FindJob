@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\VacancyRequest;
+use App\Http\Requests\CompanyRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class VacancyCrudController
+ * Class CompanyCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class VacancyCrudController extends CrudController
+class CompanyCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -21,37 +21,29 @@ class VacancyCrudController extends CrudController
 
     public function setup()
     {
-        CRUD::setModel(\App\Models\Vacancy::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/vacancy');
-        CRUD::setEntityNameStrings('vacancy', 'vacancies');
+        CRUD::setModel(\App\Models\Company::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/company');
+        CRUD::setEntityNameStrings('company', 'companies');
     }
 
     protected function setupListOperation()
     {
         CRUD::column('id');
-        CRUD::column('salary_id');
-        CRUD::column('position_id');
-        CRUD::column('company_id');
-        CRUD::column('Description');
-        CRUD::column('Location');
-        CRUD::column('Remote');
-        CRUD::column('Requirements');
-        CRUD::column('Schedule');
+        CRUD::column('name');
+        CRUD::column('logo');
+        CRUD::column('location');
+        CRUD::column('contacts');
     }
 
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(VacancyRequest::class);
+        CRUD::setValidation(CompanyRequest::class);
 
         CRUD::field('id');
-        CRUD::field('salary_id');
-        CRUD::field('position_id');
-        CRUD::field('company_id');
-        CRUD::field('Description');
-        CRUD::field('Location');
-        CRUD::field('Remote');
-        CRUD::field('Requirements');
-        CRUD::field('Schedule');
+        CRUD::field('name');
+        CRUD::field('logo');
+        CRUD::field('location');
+        CRUD::field('contacts');
     }
 
     protected function setupUpdateOperation()
