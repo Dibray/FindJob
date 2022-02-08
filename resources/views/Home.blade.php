@@ -18,6 +18,35 @@
             <div class="home">
                 <a href="{{ route('home') }}">Home</a>
             </div>
+
+            <h2>Vacancies list</h2>
+
+            <?php
+                foreach (\App\Models\Vacancy::all() as $v)
+                {
+                    echo 'Company: ';
+                    echo $v->company()->get()[0]->name;
+/*
+                    echo '\nPosition: ';
+                    echo $v->position()->name;
+
+                    echo '\nSchedule: ';
+                    echo $v->schedule()->name;
+
+                    echo '\nSalary: ';
+                    echo $v->salary()->name;
+
+                    echo '\nLocation: ';
+                    echo $v->location()->city();
+
+                    echo '\n<spoiler>Description: ';
+                        echo $v->Description();
+                        echo $v->Requirements();
+
+                    echo '</spoiler>';*/
+                }
+            ?>
+
 <!--
             <div class="account">
                 <a href="{{ route('account') }}">Account</a>
